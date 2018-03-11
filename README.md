@@ -1,1 +1,1 @@
-# ArcoLinux-variety-config
+# ArcoLinux-rofi-config
