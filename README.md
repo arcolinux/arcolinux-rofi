@@ -1,0 +1,1 @@
+# ArcoLinux-variety-config
