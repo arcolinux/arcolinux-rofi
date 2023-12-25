@@ -10,7 +10,7 @@
 ## style-1   style-2   style-3   style-4   style-5
 
 # Current Theme
-dir="$HOME/.config/rofi/powermenu/type-1"
+dir="$HOME/.config/rofi/files/powermenu/type-1"
 theme='style-1'
 
 # CMDs

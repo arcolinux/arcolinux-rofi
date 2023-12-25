@@ -9,7 +9,7 @@
 #
 ## style-1     style-2     style-3     style-4     style-5
 
-dir="$HOME/.config/rofi/launchers/type-5"
+dir="$HOME/.config/rofi/files/launchers/type-5"
 theme='style-1'
 
 ## Run

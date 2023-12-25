@@ -116,14 +116,14 @@ $ ./setup.sh
 
 ## Launchers
 
-**`Change Style` :** Edit `~/.config/rofi/launchers/type-X/launcher.sh` script and edit the following line to use the style you like.
+**`Change Style` :** Edit `~/.config/rofi/files/launchers/type-X/launcher.sh` script and edit the following line to use the style you like.
 ```
 theme='style-1'
 ```
 
-**`Change Colors` :** Edit `~/.config/rofi/launchers/type-X/shared/colors.rasi` file and edit the following line to use the color-scheme you like.
+**`Change Colors` :** Edit `~/.config/rofi/files/launchers/type-X/shared/colors.rasi` file and edit the following line to use the color-scheme you like.
 ```css
-@import "~/.config/rofi/colors/onedark.rasi"
+@import "~/.config/rofi/files/colors/onedark.rasi"
 ```
 
 > Colors in `type-5`, `type-6` and `type-7` are hard-coded (based on image colors) and can be changed by editing the respective **`style-X.rasi`** file.
@@ -264,17 +264,17 @@ theme='style-1'
 |**`Screenshot`**|Take screenshots using **`maim`**|`maim`, `xrandr`, `dunst`, `xclip`|
 |**`Volume`**|Display and control volume with dynamic icons and mute status|`amixer` and `pavucontrol`|
 
-> To use your programs with these applets, Edit the scripts in `~/.config/rofi/applets/bin` directory.
+> To use your programs with these applets, Edit the scripts in `~/.config/rofi/files/applets/bin` directory.
 
-**`Change Theme` :** Edit `~/.config/rofi/applets/shared/theme.bash` script and edit the following line to use the type and style you like.
+**`Change Theme` :** Edit `~/.config/rofi/files/applets/shared/theme.bash` script and edit the following line to use the type and style you like.
 ```ini
-type="$HOME/.config/rofi/applets/type-1"
+type="$HOME/.config/rofi/files/applets/type-1"
 style='style-1.rasi'
 ```
 
-**`Change Colors` :** Edit `~/.config/rofi/applets/shared/colors.rasi` file and edit the following line to use the color-scheme you like.
+**`Change Colors` :** Edit `~/.config/rofi/files/applets/shared/colors.rasi` file and edit the following line to use the color-scheme you like.
 ```css
-@import "~/.config/rofi/colors/onedark.rasi"
+@import "~/.config/rofi/files/colors/onedark.rasi"
 ```
 
 > Colors in `type-4` and `type-5` are hard-coded (based on image colors) and can be changed by editing the respective **`style-X.rasi`** file.
@@ -364,14 +364,14 @@ style='style-1.rasi'
 
 ## Powermenus
 
-**`Change Style` :** Edit `~/.config/rofi/powermenu/type-X/powermenu.sh` script and edit the following line to use the style you like.
+**`Change Style` :** Edit `~/.config/rofi/files/powermenu/type-X/powermenu.sh` script and edit the following line to use the style you like.
 ```
 theme='style-1'
 ```
 
-**`Change Colors` :** Edit `~/.config/rofi/powermenu/type-X/shared/colors.rasi` file and edit the following line to use the color-scheme you like.
+**`Change Colors` :** Edit `~/.config/rofi/files/powermenu/type-X/shared/colors.rasi` file and edit the following line to use the color-scheme you like.
 ```css
-@import "~/.config/rofi/colors/onedark.rasi"
+@import "~/.config/rofi/files/colors/onedark.rasi"
 ```
 
 > Colors in `type-5` and `type-6` are hard-coded (based on image colors) and can be changed by editing the respective **`style-X.rasi`** file.
@@ -440,20 +440,20 @@ theme='style-1'
 
 #### Simple way to execute scripts
 
-There's a `$HOME/.config/rofi/scripts` directory, which contains links to each script. you can execute these links to open any type of Launcher, Applet or Powermenu.
+There's a `$HOME/.config/rofi/files/scripts` directory, which contains links to each script. you can execute these links to open any type of Launcher, Applet or Powermenu.
 
-You can add `$HOME/.config/rofi/scripts` directory to your `$PATH` variable so that entering `t7_launcher` in the terminal (or executing this command) will summon the ***type-7 launcher***. you can do it by -
+You can add `$HOME/.config/rofi/files/scripts` directory to your `$PATH` variable so that entering `t7_launcher` in the terminal (or executing this command) will summon the ***type-7 launcher***. you can do it by -
 
 - In `bash`
 ``` bash
 # Add directory to the $PATH variable
-echo "PATH=$PATH:~/.config/rofi/scripts" >> ~/.profile
+echo "PATH=$PATH:~/.config/rofi/files/scripts" >> ~/.profile
 ```
 
 - In `zsh` (oh-my-zsh)
 ``` zsh
 # Edit .zshrc and add this line
-export PATH=$HOME/.config/rofi/scripts:$PATH
+export PATH=$HOME/.config/rofi/files/scripts:$PATH
 ```
 
 > **Warning:** After changing the shell files, Logout and Login back again to update the `$PATH` environment variable.
@@ -473,7 +473,7 @@ content = 異
 content-background = black
 content-foreground = green
 
-click-left = ~/.config/rofi/launchers/type-1/launcher.sh
+click-left = ~/.config/rofi/files/launchers/type-1/launcher.sh
 click-right = launcher_t1
 
 ;; Power Menu Module
@@ -484,7 +484,7 @@ content = 襤
 content-background = black
 content-foreground = red
 
-click-left = ~/.config/rofi/powermenu/type-1/powermenu.sh
+click-left = ~/.config/rofi/files/powermenu/type-1/powermenu.sh
 click-right = powermenu_t1
 ```
 
@@ -495,7 +495,7 @@ You can also use them with the `keybindings` on your **window manager**, For exa
 ```bash
 set $mod Mod4
 
-bindsym $mod+p exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
+bindsym $mod+p exec --no-startup-id ~/.config/rofi/files/launchers/type-2/launcher.sh
 bindsym $mod+x exec --no-startup-id powermenu_t2
 ```
 
@@ -512,7 +512,7 @@ Same thing can be done with `openbox` by adding these lines to **`rc.xml`** file
     </keybind>
     <keybind key="W-x">
       <action name="Execute">
-        <command>~/.config/rofi/powermenu/type-3/powermenu.sh</command>
+        <command>~/.config/rofi/files/powermenu/type-3/powermenu.sh</command>
       </action>
     </keybind>
   </keyboard>

@@ -6,7 +6,7 @@
 ## Applets : Power Menu
 
 # Import Current Theme
-source "$HOME"/.config/rofi/applets/shared/theme.bash
+source "$HOME"/.config/rofi/files/applets/shared/theme.bash
 theme="$type/$style"
 
 # Theme Elements
