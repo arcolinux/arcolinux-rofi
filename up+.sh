@@ -50,7 +50,7 @@ rm -rf /tmp/input
 
 	cp -r /tmp/input/* etc/skel/.config/rofi/
 
-	#rm -rf /tmp/input
+	rm -rf /tmp/input
 
 	tput setaf 2;
 	echo "#################################################"
@@ -58,12 +58,10 @@ rm -rf /tmp/input
 	echo "#################################################"
 	tput sgr0;
 
+# CHANGING PATH
 
 
-
-
-
-
+find /etc/skel/.config/rofi/*  -type f -exec sed -i "s/rofi\/powermenu/rofi\/files\/powermenu/g" {} \;
 
 
 
