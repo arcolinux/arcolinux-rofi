@@ -48,6 +48,18 @@ rm -rf /tmp/input
 	rm -rf /tmp/input/.github
 	rm /tmp/input/setup.sh
 
+	# CHANGING PATH
+
+	cd /tmp/input
+	find .  -type f -exec sed -i "s/rofi\/applets/rofi\/files\/applets/g" {} \;
+	find .  -type f -exec sed -i "s/rofi\/colors/rofi\/files\/colors/g" {} \;
+	find .  -type f -exec sed -i "s/rofi\/powermenu/rofi\/files\/powermenu/g" {} \;
+	find .  -type f -exec sed -i "s/rofi\/images/rofi\/files\/images/g" {} \;
+	find .  -type f -exec sed -i "s/rofi\/launchers/rofi\/files\/launchers/g" {} \;
+	find .  -type f -exec sed -i "s/rofi\/scripts/rofi\/files\/scripts/g" {} \;
+
+	cd /home/erik/ARCO/ARCOLINUX/arcolinux-rofi
+
 	cp -r /tmp/input/* etc/skel/.config/rofi/
 
 	rm -rf /tmp/input
@@ -57,11 +69,6 @@ rm -rf /tmp/input
 	echo "################  "$name" done"
 	echo "#################################################"
 	tput sgr0;
-
-# CHANGING PATH
-
-
-find /etc/skel/.config/rofi/*  -type f -exec sed -i "s/rofi\/powermenu/rofi\/files\/powermenu/g" {} \;
 
 
 
