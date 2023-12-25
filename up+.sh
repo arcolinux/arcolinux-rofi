@@ -34,6 +34,47 @@
 echo "Checking for newer files online first"
 git pull
 
+#rm -rf root
+#mkdir root
+rm -rf /tmp/input
+
+urls=(
+https://github.com/adi1090x/rofi
+)
+
+count=0
+
+for name in "${url[@]}"; do
+	count=$[count+1]
+	tput setaf 1;echo "$count ": Github " $name ";tput sgr0;
+	
+	git clone $name --depth=1  /tmp/input
+
+	rm -rf /tmp/input/.github
+	rm /tmp/input/setup.sh
+	rm /tmp/input/LICENSE
+	rm /tmp/input/README.md
+
+	cp -r /tmp/input/* etc/skel/.config/rofi/
+
+	#rm -rf /tmp/input
+
+	tput setaf 2;
+	echo "#################################################"
+	echo "################  "$name" done"
+	echo "#################################################"
+	tput sgr0;
+done
+
+
+
+
+
+
+
+
+
+
 # Below command will backup everything inside the project folder
 git add --all .
 
