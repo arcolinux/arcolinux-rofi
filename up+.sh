@@ -34,26 +34,19 @@
 echo "Checking for newer files online first"
 git pull
 
-#rm -rf root
-#mkdir root
+# clean up our github
+rm -rf etc/skel/.config/rofi/files/
+rm -rf etc/skel/.config/rofi/fonts/
+rm -rf etc/skel/.config/rofi/previews/
+rm -f etc/skel/.config/rofi/LICENSE
+rm -f etc/skel/.config/rofi/README.md
+
 rm -rf /tmp/input
 
-urls=(
-https://github.com/adi1090x/rofi
-)
-
-count=0
-
-for name in "${url[@]}"; do
-	count=$[count+1]
-	tput setaf 1;echo "$count ": Github " $name ";tput sgr0;
-	
-	git clone $name --depth=1  /tmp/input
+	git clone https://github.com/adi1090x/rofi --depth=1  /tmp/input
 
 	rm -rf /tmp/input/.github
 	rm /tmp/input/setup.sh
-	rm /tmp/input/LICENSE
-	rm /tmp/input/README.md
 
 	cp -r /tmp/input/* etc/skel/.config/rofi/
 
@@ -64,7 +57,6 @@ for name in "${url[@]}"; do
 	echo "################  "$name" done"
 	echo "#################################################"
 	tput sgr0;
-done
 
 
 
